@@ -16,7 +16,7 @@ if __name__ == '__main__':
     distributed.init_process_group(backend = 'nccl',
     init_method = 'env://',
     rank = 0,
-    world_size = 1)
+    world_size = 4)
 
     model = create_model(opt)      # create a model given opt.model and other options
     model = torch.nn.parallel.DistributedDataParallel(model)
